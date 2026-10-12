@@ -15,10 +15,11 @@
 
 
 (defn write! [url html]
-  (let [out (str out-path
-                 (case url
+  (let [relative-path (routes/relative-path url)
+        out (str out-path
+                 (case relative-path
                    "/404" "404.html"
-                   (str url "/index.html")))]
+                   (str relative-path "/index.html")))]
     (fs/create-dirs (fs/parent out))
     (spit out html)))
 

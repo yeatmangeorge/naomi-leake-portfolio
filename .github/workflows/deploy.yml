@@ -35,7 +35,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y tidy
 
       - name: Build site
-        run: bb build.clj
+        run: BASE_PATH="/${{ github.event.repository.name }}" bb build.clj
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
