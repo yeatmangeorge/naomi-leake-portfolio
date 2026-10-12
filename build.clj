@@ -1,15 +1,20 @@
 (ns build
   (:require
-   [home :as home]))
+   [babashka.fs :as fs]
+   [home]
+   [not-found]))
 
-(require '[babashka.fs :as fs])
 
 (fs/delete-tree "public")
 (fs/create-dirs "public")
 
 (defn write! [url html]
-  (let [out (str "public/" url "/index.html")]
+  (let [out (str "public/"
+                 (case url
+                   "404" "404.html"
+                   (str url "/index.html")))]
     (fs/create-dirs (fs/parent out))
     (spit out html)))
 
 (write! home/url home/page)
+(write! not-found/url not-found/page)
