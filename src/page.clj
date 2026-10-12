@@ -13,6 +13,8 @@
                   :content "width=device-width, initial-scale=1"}]
           [:title title]
           [:link {:rel "stylesheet"
+                  :href "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300..700&display=swap"}]
+          [:link {:rel "stylesheet"
                   :href "/style/style.css"}]]
          (into [:body]
                (concat [(navbar/navbar url)] body))])))

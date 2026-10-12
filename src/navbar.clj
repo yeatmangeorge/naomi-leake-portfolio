@@ -1,19 +1,38 @@
+
 (ns navbar
   (:require
    [routes]))
 
 (defn navbar-item [url title selected?]
-  [:a {:href url}
-   [:div.navbar-item
-    {:class (when selected? "selected")}
-    title]])
+  [:a.navbar-item
+   {:href url
+    :class (when selected? "selected")}
+   title])
 
 (defn navbar-items [current-page-url]
   (map (fn [[url title]]
          (navbar-item url title (= url current-page-url)))
        [[routes/home "Home"]
-        [routes/gallery "Gallery"]]))
+        [routes/gallery "Gallery"]
+        [routes/bio "Meet Naomi!"]
+        [routes/contact "Contact"]]))
 
 (defn navbar [current-page-url]
-  [:div.navbar
-   (navbar-items current-page-url)])
+  [:nav.navbar
+   [:a.navbar-brand
+    {:href routes/home
+     :aria-label "Home"}
+    "Naomi Leake"]
+
+   [:div.navbar-links
+    (navbar-items current-page-url)]
+
+   [:details.navbar-mobile
+    [:summary.navbar-toggle
+     {:aria-label "Toggle navigation"}
+     [:span]
+     [:span]
+     [:span]]
+
+    [:div.navbar-mobile-links
+     (navbar-items current-page-url)]]])
