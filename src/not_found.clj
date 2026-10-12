@@ -1,7 +1,6 @@
 (ns not-found
-  (:require [page :as p]))
-
-(def url "404")
+  (:require [page :as p]
+            [routes]))
 
 (def page
-  (p/page url "Not Found" [:h1 "Not Found"]))
+  (p/page routes/not-found "Not Found" [:h1 "Not Found"]))

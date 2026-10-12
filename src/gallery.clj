@@ -1,7 +1,7 @@
-(ns gallery 
+(ns gallery
   (:require
-    [page :as p]))
+   [page :as p]
+   [routes]))
 
-(def url "gallery")
-(def page (p/page url "Gallery" [:h1 "Gallery"]
+(def page (p/page routes/gallery "Gallery" [:h1 "Gallery"]
                   [:div.gallery-item  (p/image "test" "") [:p "hello"]]))

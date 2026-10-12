@@ -3,7 +3,8 @@
    [babashka.fs :as fs]
    [gallery]
    [home]
-   [not-found]))
+   [not-found]
+   [routes]))
 
 (fs/delete-tree "public")
 (fs/create-dirs "public")
@@ -16,11 +17,11 @@
 (defn write! [url html]
   (let [out (str out-path
                  (case url
-                   "404" "404.html"
+                   "/404" "404.html"
                    (str url "/index.html")))]
     (fs/create-dirs (fs/parent out))
     (spit out html)))
 
-(write! home/url home/page)
-(write! not-found/url not-found/page)
-(write! gallery/url gallery/page)
+(write! routes/home home/page)
+(write! routes/not-found not-found/page)
+(write! routes/gallery gallery/page)

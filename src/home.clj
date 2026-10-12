@@ -1,8 +1,8 @@
 (ns home
-  (:require [page :as p]))
+  (:require [page :as p]
+            [routes]))
 
-(def url "")
 
 (def page
-  (p/page url "Naomi Leake"
+  (p/page routes/home "Naomi Leake"
           [:h1 "Hello, World!"]))
