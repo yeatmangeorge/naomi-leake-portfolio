@@ -4,4 +4,4 @@
 
 (def url "gallery")
 (def page (p/page url "Gallery" [:h1 "Gallery"]
-                  [:div.gallery-item "hello"]))
+                  [:div.gallery-item  (p/image "test" "") [:p "hello"]]))

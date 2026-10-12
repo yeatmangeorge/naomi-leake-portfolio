@@ -1,0 +1,30 @@
+.gallery-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.gallery-item img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  background: white;
+}
+
+.gallery-item .gallery-item-text {
+  box-sizing: border-box;
+  min-width: 0;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .gallery-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+}

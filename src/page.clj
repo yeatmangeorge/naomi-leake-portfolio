@@ -13,3 +13,6 @@
           [:link {:rel "stylesheet"
                   :href "/style/style.css"}]]
          (into [:body] body)])))
+
+(defn image [name description]
+  [:img {:src (str "image/" name ".webp") :alt description}])
