@@ -1,0 +1,10 @@
+(ns strings)
+
+(defn website-title [] "Oh Naomi")
+(defn home-page-title[] "Home")
+(defn gallery-page-title [] "Gallery")
+(defn bio-page-title [] "Meet Naomi!")
+(defn contact-page-title [] "Contact")
+(defn not-found-page-title [] "Page Not Found")
+(defn not-found-page-body [] "Unfortunately we can't find the page you are looking for.")
+(defn toggle-navigation-msg [] "Toggle Navigation")

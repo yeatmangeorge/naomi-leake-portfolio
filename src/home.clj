@@ -1,7 +1,7 @@
 (ns home
   (:require [page :as p]
-            [routes]))
+            [routes]
+            [strings]))
 
 (def page
-  (p/page routes/home "Naomi Leake"
-          [:h1 "Hello, World!"]))
+  (p/page routes/home (strings/home-page-title)))
