@@ -7,4 +7,8 @@
 (defn contact-page-title [] "Contact")
 (defn not-found-page-title [] "Page Not Found")
 (defn not-found-page-body [] "Unfortunately we can't find the page you are looking for.")
+(defn phone-number [] "+44 0000000000")
+(defn phone-number-title [] "Phone Number")
+(defn email-title [] "Email")
+(defn email [] "placeholder@gmail.com")
 (defn toggle-navigation-msg [] "Toggle Navigation")

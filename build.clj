@@ -4,6 +4,7 @@
    [gallery]
    [home]
    [not-found]
+   [contact]
    [routes]))
 
 (fs/delete-tree "public")
@@ -26,3 +27,4 @@
 (write! routes/home home/page)
 (write! routes/not-found not-found/page)
 (write! routes/gallery gallery/page)
+(write! routes/contact contact/page)
