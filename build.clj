@@ -1,10 +1,11 @@
 (ns build
   (:require
    [babashka.fs :as fs]
+   [bio]
+   [contact]
    [gallery]
    [home]
    [not-found]
-   [contact]
    [routes]))
 
 (fs/delete-tree "public")
@@ -28,3 +29,4 @@
 (write! routes/not-found not-found/page)
 (write! routes/gallery gallery/page)
 (write! routes/contact contact/page)
+(write! routes/bio bio/page)
