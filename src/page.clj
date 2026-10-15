@@ -17,8 +17,9 @@
                   :href "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300..700&display=swap"}]
           [:link {:rel "stylesheet"
                   :href (str routes/base-path "/style/style.css")}]]
-         (into [:body]
-               (concat [(navbar/navbar url)] body))])))
+         (into [:body
+                (navbar/navbar url)
+                (into [:div.main] body)])])))
 
 (defn image [name description]
   [:img {:src (str routes/base-path "/image/" name ".webp") :alt description}])
