@@ -241,3 +241,32 @@ body {
     gap: 1rem;
   }
 }
+
+.slideshow {
+  position: relative;
+  height: 60%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.slideshow-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slideshow-image.active {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slideshow-image {
+    transition: none;
+  }
+}
